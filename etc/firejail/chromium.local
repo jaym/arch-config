@@ -1,0 +1,12 @@
+whitelist /dev/dri
+whitelist /dev/full
+whitelist /dev/null
+whitelist /dev/ptmx
+whitelist /dev/pts
+whitelist /dev/random
+whitelist /dev/shm
+whitelist /dev/snd
+whitelist /dev/tty
+whitelist /dev/urandom
+whitelist /dev/zero
+whitelist /dev/yubikey
