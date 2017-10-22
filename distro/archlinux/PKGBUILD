@@ -1,0 +1,19 @@
+pkgname=arch-config
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="My arch configs"
+arch=('x86_64')
+url="https://github.com/jaym/arch-config"
+license=('MIT')
+options=('!strip' '!emptydirs')
+
+build() {
+  cp -r $startdir/../../etc $srcdir
+}
+
+package() {
+  # install -Dm644 -d etc $pkgdir/etc
+  find . -type f -exec install -Dm644 {} $pkgdir/{} \;
+}
+
+# vim:set ts=2 sw=2 et:
