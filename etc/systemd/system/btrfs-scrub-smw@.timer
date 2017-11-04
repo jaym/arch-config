@@ -1,0 +1,11 @@
+[Unit]
+Description=Sat, Mon, Wed Btrfs scrub on %f
+
+[Timer]
+OnCalendar=Sat,Mon,Wed 00:00:00
+AccuracySec=1d
+Persistent=true
+Unit=btrfs-scrub@.service
+
+[Install]
+WantedBy=multi-user.target
