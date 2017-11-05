@@ -1,0 +1,10 @@
+[Unit]
+Description=Prometheus Exporter for machine metrics
+After=network.target
+
+[Service]
+ExecStartPre=/usr/bin/mkdir -p /var/lib/node_exporter/textfile_collector
+ExecStart=/usr/bin/prometheus_node_exporter --collector.textfile.directory /var/lib/node_exporter/textfile_collector
+
+[Install]
+WantedBy=multi-user.target

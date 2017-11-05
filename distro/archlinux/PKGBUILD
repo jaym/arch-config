@@ -1,5 +1,5 @@
 pkgname=arch-config
-pkgver=1.0.1
+pkgver=1.0.2
 pkgrel=1
 pkgdesc="My arch configs"
 arch=('x86_64')
@@ -9,11 +9,13 @@ options=('!strip' '!emptydirs')
 
 build() {
   cp -r $startdir/../../etc $srcdir
+  cp -r $startdir/../../usr $srcdir
 }
 
 package() {
   # install -Dm644 -d etc $pkgdir/etc
-  find . -type f -exec install -Dm644 {} $pkgdir/{} \;
+  find etc -type f -exec install -Dm644 {} $pkgdir/{} \;
+  find usr -type f -exec install -Dm755 {} $pkgdir/{} \;
 }
 
 # vim:set ts=2 sw=2 et:
